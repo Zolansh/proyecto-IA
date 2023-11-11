@@ -1,0 +1,20 @@
+create database bd_barberia;
+use bd_barberia
+create table usuario(
+id_user int auto_increment not null primary key,
+nombre varchar(50) not null,
+apellido varchar(50) not null,
+usuario varchar(50) not null,
+password varchar(50) not null
+);
+DELIMITER //
+CREATE PROCEDURE sp_insert_user(
+    IN p_nombre VARCHAR(50),
+    IN p_apellido VARCHAR(50),
+    IN p_usuario VARCHAR(50),
+    IN p_password VARCHAR(50)
+)
+BEGIN
+    INSERT INTO usuario(nombre, apellido, usuario, password) VALUES(p_nombre, p_apellido, p_usuario, p_password);
+END //
+DELIMITER ;
