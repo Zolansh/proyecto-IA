@@ -16,3 +16,20 @@ BEGIN
     INSERT INTO usuario(email, usuario, password) VALUES(p_email, p_usuario, p_password);
 END //
 DELIMITER ;
+---tabla cortes
+create table tb_cortes(
+id_cortes int auto_increment not null primary key,
+nombre_corte varchar(50) not null,
+descripcion varchar(500) not null,
+imagen blob not null,
+tipo_rostro varchar(50) not null
+);
+CREATE PROCEDURE sp_insert_cortes(
+IN p_nombre_corte varchar(50),
+IN p_descripcion varchar(500),
+IN p_imagen blob,
+IN p_tipo_rostro varchar(50)
+)
+BEGIN
+    INSERT INTO tb_cortes(nombre_corte, descripcion, imagen, tipo_rostro) VALUES(p_nombre_corte, p_descripcion, p_imagen, p_tipo_rostro);
+END;
