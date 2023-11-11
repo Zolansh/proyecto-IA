@@ -16,6 +16,7 @@ BEGIN
     INSERT INTO usuario(email, usuario, password) VALUES(p_email, p_usuario, p_password);
 END //
 DELIMITER ;
+
 ---tabla cortes
 create table tb_cortes(
 id_cortes int auto_increment not null primary key,
@@ -33,3 +34,8 @@ IN p_tipo_rostro varchar(50)
 BEGIN
     INSERT INTO tb_cortes(nombre_corte, descripcion, imagen, tipo_rostro) VALUES(p_nombre_corte, p_descripcion, p_imagen, p_tipo_rostro);
 END;
+---registros
+call sp_insert_cortes('Blow Out Fade','¡Descubre la revolución en estilo con nuestro espectacular "Blowout Fade"! Este corte de pelo de última moda no solo es un servicio, ¡es una experiencia de transformación que elevará tu estilo a nuevas alturas!','C:\xampp\htdocs\imagenes\blowoutfade.jpg','Rostro Redondo');
+call sp_insert_cortes('Taper fade','¡Haz una declaración de estilo audaz con nuestro increíble "Taper Fade"! Sumérgete en la elegancia y la versatilidad de este corte de cabello de última moda, diseñado para destacar tu individualidad con un toque de sofisticación.','C:\xampp\htdocs\imagenes\taperfade.jpg','Rostro Cuadrado');
+call sp_insert_cortes('High Fade','¡Bienvenido a la cima del estilo con nuestro exclusivo "High Fade"! Este corte de pelo redefine la elegancia con una fusión perfecta de audacia y precisión, llevando tu imagen a nuevas alturas de modernidad y distinción!.','C:\xampp\htdocs\imagenes\highfade.jpg','Rostro Ovalado');
+call sp_insert_cortes('Low Fade',' ¡Descubre la revolución en cortes de cabello con nuestro espectacular "Low Fade"! Este corte vanguardista combina a la perfección estilo y versatilidad para ofrecerte una apariencia moderna y sofisticada.','C:\xampp\htdocs\imagenes\lowfade.jpg','Rostro Rectangular');
